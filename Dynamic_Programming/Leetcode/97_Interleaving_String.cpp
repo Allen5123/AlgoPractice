@@ -5,12 +5,12 @@ public:
         int p = s1.length(), q = s2.length(), r = s3.length();
         vector<vector<bool>> dp(p + 1, vector<bool>(q + 1, false));
     /*
-    For convenience, assumes that index start from 1
-    dp[i][j] := whether s3[1:i+j] is interleaving of s1[1:i] & s2[1:j] or not
+        For convenience, assumes that index start from 1
+        dp[i][j] := whether s3[1:i+j] is interleaving of s1[1:i] & s2[1:j] or not
 
-    -- true, if (s3[i+j] == s1[i] && dp[i-1][j]) || (s3[i+j] == s2[j] && dp[i][j-1])
-  = |
-    -- false, otherwise
+          -- true, if (s3[i+j] == s1[i] && dp[i-1][j]) || (s3[i+j] == s2[j] && dp[i][j-1])
+        = |
+          -- false, otherwise
     */
         if (p + q != r) {
             return false;
